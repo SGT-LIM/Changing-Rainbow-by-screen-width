@@ -1,0 +1,83 @@
+/*제목쪽의 배경색을 무지개색으로 하고 글자를 투명하게 해서
+h1을 무지개색처럼 보이게 하기*/
+h1{
+  background-image: linear-gradient(90deg, red 40%, orange, yellow, green, blue, navy, purple 60%);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 45px;
+  text-align: center;
+}
+
+/*본문 text 색깔 정해주기*/
+.Red{
+  color:red;
+}
+.Orange{
+  color:Orange;
+}
+.Yellow{
+  color:yellow;
+}
+.Green{
+  color:green;
+}
+.Blue{
+  color:blue;
+}
+.Navy{
+  color:navy;
+}
+.Purple{
+  color:purple;
+}
+
+@media(max-width:700px){ /*화면 700px이하일 때, 제목 색깔 재조정 및 본문 가운데정렬*/
+  #rainbow{
+    text-align: center;
+  }
+  h1{
+    background-image: linear-gradient(90deg, red 30%, orange, yellow, green, blue, navy, purple 70%);
+  }
+}
+
+/*화면 폭 701~1100일 때 본문이 하강 대각선으로 나타나게 하기*/
+@media(min-width:701px) and (max-width:1100px){
+  .Red{
+    position: relative;
+    left: 10%;
+  }
+  .Orange{
+    position: relative;
+    top:0px;
+    left:22%;
+  }
+  .Yellow{
+    position: relative;
+    left: 35%;
+  }
+  .Green{
+    text-align: center;
+  }
+  .Blue{
+    position: relative;
+    left: 60%;
+  }
+  .Navy{
+    position: relative;
+    left: 71%;
+  }
+  .Purple{
+    position: relative;
+    left: 83%;
+  }
+}
+
+/*화면 폭 1101px이상일 때 grid효과 주어서 열들의 배치 비율을 같게 하기*/
+@media(min-width:1101px){
+  #rainbow{
+    display: grid;
+    /*grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;*/
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+  }
+}
